@@ -38,26 +38,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-	var allergy_count = 0; <!-- This creates a variable called allergy_count -->
-        var cold_count = 0; <!-- This create a variable called cold_count -->
+	var asthma_count = 0; <!-- This creates a variable called asthma_count -->
+        var copd_count = 0; <!-- This create a variable called copd_count -->
 
 
-        function allergyAdd(){ <!-- When called, this function increments allergy_count by one -->
-            allergy_count = allergy_count + 1; //adds one to previous allergy count
+        function asthmaAdd(){ <!-- When called, this function increments asthma_count by one -->
+            asthma_count = asthma_count + 1; //adds one to previous asthma count
 
         }
 
-        function coldAdd(){ <!-- When called, this function increments cold_count by one -->
-            cold_count = cold_count + 1; //adds one to the previous cold count
+        function copdAdd(){ <!-- When called, this function increments copd_count by one -->
+            copd_count = copd_count + 1; //adds one to the previous copd count
 		
         }
 	
 	
-	function results(){ //when the button on the last page is pressed it calls this function and calculates the percentages for cold and allergy symptoms.
-         var allergyPercent = (allergy_count)/(4)*100  //This variable calculates allergy perecent by dividing the number of times a button with onclick allergy_add is pressed by 4 and then multiplying by 100.
-	 var coldPercent = (cold_count)/(4)*100  //This variable calculates cold percent by diving the number of times a button with onclick cold_add is pressed by 4 and then multiplying by 100.
+	function results(){ //when the button on the last page is pressed it calls this function and calculates the percentages for copd and asthma symptoms.
+         var allergyPercent = (asthma_count)/(4)*100  //This variable calculates asthma perecent by dividing the number of times a button with onclick asthma_add is pressed by 4 and then multiplying by 100.
+	 var coldPercent = (copd_count)/(4)*100  //This variable calculates copd percent by diving the number of times a button with onclick copd_add is pressed by 4 and then multiplying by 100.
          var resultText = document.getElementById("results"); //This variable captures the content of the results paragraph.	  
-	 resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%";} //The code above changes what goes on the last page with the id="results" all of the stuff in quotations will show up how it is written and the white parts will call the variables above.
+	 resultText.innerHTML = "Probability it is asthma =" + allergyPercent + "%" + "<br> Probability it is a copd =" + coldPercent + "%";} //The code above changes what goes on the last page with the id="results" all of the stuff in quotations will show up how it is written and the white parts will call the variables above.
 
 </script>	
 
@@ -88,7 +88,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <body>
 
 <div id="header" class="w3-container w3-flat-carrot"> <!-- Here, it prints words in the header -->
-	<h1>Cold or Allergies?</h1> <!-- The words are "Cold or Allergies" -->
+	<h1>Cold or Allergies?</h1> <!-- The words are "Copd or Asthma" -->
 </div>
 	
 <div id="content" class="w3-container"> <!-- This prints the main content on the page before the quiz starts  -->
@@ -113,9 +113,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
     	<div id="content" class="w3-container"> <!-- The code below is for the main content on page one -->
-        <p>Are your eyes watery or itchy?</p> <!-- On the first page under the header, these words will be diplayed. -->
-	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-pink w3-round"> yes </a> <!-- This code makes a button that is pink and round and has the word "yes" on it. When pressed, it will call the allergy_add function and take the user to the page with id="two"  --> 
-	<a href="#two" onclick="coldAdd();" class="w3-btn w3-pink w3-round"> no </a> <!-- This code makes a button that is pink and round and has the word "no" on it. When pressed, it will call the cold_add function and take the user to the page with id="two" -->
+        <p>Did you start noticing symptoms at a young age?</p> <!-- On the first page under the header, these words will be diplayed. -->
+	<a href="#two" onclick="asthmaAdd();" class="w3-btn w3-pink w3-round"> yes </a> <!-- This code makes a button that is pink and round and has the word "yes" on it. When pressed, it will call the allergy_add function and take the user to the page with id="two"  --> 
+	<a href="#two" onclick="copdAdd();" class="w3-btn w3-pink w3-round"> no </a> <!-- This code makes a button that is pink and round and has the word "no" on it. When pressed, it will call the cold_add function and take the user to the page with id="two" -->
     	</div>
 	
 	
@@ -129,9 +129,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
 	<div id="content" class="w3-container"> <!-- The code below is for the main content on page two -->
-		<p>Do you have a fever?</p> <!-- On the second page under the header, these words will be diplayed. -->
-		<a href="#three" onclick="coldAdd();" class="w3-btn w3-teal w3-round"> yes </a> <!-- This code makes a button that is teal and round and has the word "yes" on it. When pressed, it will call the cold_add function and take the user to the page with id="three"  -->
-		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-teal w3-round"> no </a> <!-- This code makes a button that is teal and round and has the word "no" on it. When pressed, it will call the allergy_add function and take the user to the page with id="three"  -->
+		<p>Is your cough wet?</p> <!-- On the second page under the header, these words will be diplayed. -->
+		<a href="#three" onclick="copdAdd();" class="w3-btn w3-teal w3-round"> yes </a> <!-- This code makes a button that is teal and round and has the word "yes" on it. When pressed, it will call the cold_add function and take the user to the page with id="three"  -->
+		<a href="#three" onclick="asthmaAdd();" class="w3-btn w3-teal w3-round"> no </a> <!-- This code makes a button that is teal and round and has the word "no" on it. When pressed, it will call the allergy_add function and take the user to the page with id="three"  -->
 	</div>
 	
 	
@@ -143,9 +143,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container"> <!-- The code below is for the main content on page three -->
-		<p>Do you have a sore throat?</p> <!-- On the third page under the header, these words will be diplayed. -->
-		<a href="#four" onclick="coldAdd();" class="w3-btn w3-pink w3-round"> yes </a> <!-- This code makes a button that is pink and round and has the word "yes" on it. When pressed, it will call the cold_add function and take the user to the page with id="four" -->
-		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-pink w3-round"> no </a> <!-- This code makes a button that is pink and round and has the word "no" on it. When pressed, it will call the allergy_add function and take the user to the page with id="four" -->
+		<p>Do you suffer from allergies?</p> <!-- On the third page under the header, these words will be diplayed. -->
+		<a href="#four" onclick="asthmaAdd();" class="w3-btn w3-pink w3-round"> yes </a> <!-- This code makes a button that is pink and round and has the word "yes" on it. When pressed, it will call the cold_add function and take the user to the page with id="four" -->
+		<a href="#four" onclick="copdAdd();" class="w3-btn w3-pink w3-round"> no </a> <!-- This code makes a button that is pink and round and has the word "no" on it. When pressed, it will call the allergy_add function and take the user to the page with id="four" -->
 	</div>
 		
 		
@@ -157,9 +157,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container"> <!-- The code below is for the main content on page four -->
-		<p>Are your symptoms seasonal or chronic?</p> <!-- On the fourth page under the header, these words will be diplayed. -->
-		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-teal w3-round"> yes </a> <!-- This code makes a button that is teal and round and has the word "yes" on it. When pressed, it will call the allergy_add function and take the user to the page with id="five" -->
-		<a href="#five" onclick="coldAdd();" class="w3-btn w3-teal w3-round"> no </a> <!-- This code makes a button that is teal and round and has the word "no" on it. When pressed, it will call the cold_add function and take the user to the page with id="five" -->
+		<p>Do you often experience tightness in your chest?</p> <!-- On the fourth page under the header, these words will be diplayed. -->
+		<a href="#five" onclick="asthmaAdd();" class="w3-btn w3-teal w3-round"> yes </a> <!-- This code makes a button that is teal and round and has the word "yes" on it. When pressed, it will call the allergy_add function and take the user to the page with id="five" -->
+		<a href="#five" onclick="copdAdd();" class="w3-btn w3-teal w3-round"> no </a> <!-- This code makes a button that is teal and round and has the word "no" on it. When pressed, it will call the cold_add function and take the user to the page with id="five" -->
 	</div>
 	
 		
