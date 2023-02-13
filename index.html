@@ -38,7 +38,26 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <script>
 
-	//YOUR JAVASCRIPT GOES HERE
+	var allergy_count = 0; <!-- This creates a variable called allergy_count -->
+        var cold_count = 0; <!-- This create a variable called cold_count -->
+
+
+        function allergyAdd(){ <!-- When called, this function increments allergy_count by one -->
+            allergy_count = allergy_count + 1; //adds one to previous allergy count
+
+        }
+
+        function coldAdd(){ <!-- When called, this function increments cold_count by one -->
+            cold_count = cold_count + 1; //adds one to the previous cold count
+		
+        }
+	
+	
+	function results(){ //when the button on the last page is pressed it calls this function and calculates the percentages for cold and allergy symptoms.
+         var allergyPercent = (allergy_count)/(4)*100  //This variable calculates allergy perecent by dividing the number of times a button with onclick allergy_add is pressed by 4 and then multiplying by 100.
+	 var coldPercent = (cold_count)/(4)*100  //This variable calculates cold percent by diving the number of times a button with onclick cold_add is pressed by 4 and then multiplying by 100.
+         var resultText = document.getElementById("results"); //This variable captures the content of the results paragraph.	  
+	 resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%";} //The code above changes what goes on the last page with the id="results" all of the stuff in quotations will show up how it is written and the white parts will call the variables above.
 
 </script>	
 
@@ -67,9 +86,113 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </style>
 
 <body>
+
+<div id="header" class="w3-container w3-flat-carrot"> <!-- Here, it prints words in the header -->
+	<h1>Cold or Allergies?</h1> <!-- The words are "Cold or Allergies" -->
+</div>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+<div id="content" class="w3-container"> <!-- This prints the main content on the page before the quiz starts  -->
+	<p>Are you feeling like you might have a cold but wondering if it is just allergies? Answer a few short questions to find out!</p> <!-- These are the words that will show up on the page -->
+	
+	<a href="#one" class="w3-btn w3-pink w3-round"> Get Started </a> <!-- This is the button to take the user to page one of the quiz. I changed the color to pink and the shape to round. On the button it says Get Started. -->
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at 
+	   The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for 
+	   entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas 
+	   system are not liable for anything related to this code.</p> <!-- This text will show up on the screen of the page before the quiz under the button that says get started. -->
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p> <!-- This text will be the last words on the page before the quiz. -->
+
+	
+	<!-- This code is for the header on page one of the website.-->
+	
+<div class="page" id="one"> <!-- This code names the first page "one" -->
+	<div id="header" class="w3-container w3-flat-carrot"> <!-- This makes the header for page one of the quiz -->
+		<h1>Question 1</h1> <!-- The header will say Question 1 -->
+	</div>
+	
+	
+    	<div id="content" class="w3-container"> <!-- The code below is for the main content on page one -->
+        <p>Are your eyes watery or itchy?</p> <!-- On the first page under the header, these words will be diplayed. -->
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-pink w3-round"> yes </a> <!-- This code makes a button that is pink and round and has the word "yes" on it. When pressed, it will call the allergy_add function and take the user to the page with id="two"  --> 
+	<a href="#two" onclick="coldAdd();" class="w3-btn w3-pink w3-round"> no </a> <!-- This code makes a button that is pink and round and has the word "no" on it. When pressed, it will call the cold_add function and take the user to the page with id="two" -->
+    	</div>
+	
+	
+</div>
+	
+
+<div class="page" id="two"> <!-- This code names the next page "two" -->
+	<div class="w3-container w3-flat-carrot"> <!-- This code makes the header for the second page of the quiz -->
+		<h1>Question 2</h1> <!-- The header will say Question 2 -->
+	</div>
+	
+	
+	<div id="content" class="w3-container"> <!-- The code below is for the main content on page two -->
+		<p>Do you have a fever?</p> <!-- On the second page under the header, these words will be diplayed. -->
+		<a href="#three" onclick="coldAdd();" class="w3-btn w3-teal w3-round"> yes </a> <!-- This code makes a button that is teal and round and has the word "yes" on it. When pressed, it will call the cold_add function and take the user to the page with id="three"  -->
+		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-teal w3-round"> no </a> <!-- This code makes a button that is teal and round and has the word "no" on it. When pressed, it will call the allergy_add function and take the user to the page with id="three"  -->
+	</div>
+	
+	
+</div>	
+
+	<div class="page" id="three"> <!-- This code names the next page "three" -->
+	<div class="w3-container w3-flat-carrot"> <!-- This code makes the header for the third page of the quiz -->
+		<h1>Question 3</h1> <!-- The header will say Question 3 -->
+	</div>
+	
+	<div id="content" class="w3-container"> <!-- The code below is for the main content on page three -->
+		<p>Do you have a sore throat?</p> <!-- On the third page under the header, these words will be diplayed. -->
+		<a href="#four" onclick="coldAdd();" class="w3-btn w3-pink w3-round"> yes </a> <!-- This code makes a button that is pink and round and has the word "yes" on it. When pressed, it will call the cold_add function and take the user to the page with id="four" -->
+		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-pink w3-round"> no </a> <!-- This code makes a button that is pink and round and has the word "no" on it. When pressed, it will call the allergy_add function and take the user to the page with id="four" -->
+	</div>
+		
+		
+</div>	
+
+	<div class="page" id="four"> <!-- This code names the next page "four" -->
+	<div class="w3-container w3-flat-carrot"> <!-- This code makes the header for the fourth page of the quiz -->
+		<h1>Question 4</h1> <!-- The header will say Question 4 -->
+	</div>
+	
+	<div id="content" class="w3-container"> <!-- The code below is for the main content on page four -->
+		<p>Are your symptoms seasonal or chronic?</p> <!-- On the fourth page under the header, these words will be diplayed. -->
+		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-teal w3-round"> yes </a> <!-- This code makes a button that is teal and round and has the word "yes" on it. When pressed, it will call the allergy_add function and take the user to the page with id="five" -->
+		<a href="#five" onclick="coldAdd();" class="w3-btn w3-teal w3-round"> no </a> <!-- This code makes a button that is teal and round and has the word "no" on it. When pressed, it will call the cold_add function and take the user to the page with id="five" -->
+	</div>
+	
+		
+</div>	
+
+	<div class="page" id="five"> <!-- This code names the next page "five" -->
+	<div class="w3-container w3-flat-carrot"> <!-- This code makes the header for the fifth page of the quiz -->
+		<h1>Almost There!</h1> <!-- The header will say Almost There! -->
+	</div>
+	
+	<div id="content" class="w3-container"> <!-- The code below is for the main content on page five -->
+		<a href="#results" onclick="results()" class="w3-btn w3-pink w3-round"> Click for Results! :) </a> <!-- This code makes a button that is pink and round and has the text "Click for Reusults! :)" on it. When pressed, it calls the results function and directs the user to the results page. -->
+	</div>
+		
+		
+</div>	
+	
+	<div class="page" id="results"> <!-- This code names the next page "results" -->
+	<div class="w3-container w3-flat-carrot"> <!-- The code makes the header for the results page of the quiz -->
+		<h1>Results</h1> <!-- The header will say Results -->
+	</div>
+	
+	<div id="content" class="w3-container"> <!-- The code below is for the main content on the last page -->
+		<p id="results"></p> <!-- This code is like the placeholder for the content on the last page where the percentages will be displayed. -->
+
+      
+</div>
+		
+		
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>hehehaha</p>
+</footer>	
+	
 	
 </body>
 </html>
