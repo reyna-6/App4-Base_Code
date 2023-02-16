@@ -56,10 +56,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
 	function results(){ //when the button on the last page is pressed it calls this function and calculates the percentages for COPD and asthma symptoms.
-         var allergyPercent = (asthma_count)/(4)*100  //This variable calculates asthma perecent by dividing the number of times a button with onclick asthma_add is pressed by 4 and then multiplying by 100.
-	 var coldPercent = (COPD_count)/(4)*100  //This variable calculates COPD percent by diving the number of times a button with onclick COPD_add is pressed by 4 and then multiplying by 100.
+         var asthmaPercent = (asthma_count)/(4)*100  //This variable calculates asthma perecent by dividing the number of times a button with onclick asthma_add is pressed by 4 and then multiplying by 100.
+	 var COPDPercent = (COPD_count)/(4)*100  //This variable calculates COPD percent by diving the number of times a button with onclick COPD_add is pressed by 4 and then multiplying by 100.
          var resultText = document.getElementById("results"); //This variable captures the content of the results paragraph.	  
-	 resultText.innerHTML = "Probability it is asthma =" + allergyPercent + "%" + "<br> Probability it is a COPD =" + coldPercent + "%";} //The code above changes what goes on the last page with the id="results" all of the stuff in quotations will show up how it is written and the white parts will call the variables above.
+	 resultText.innerHTML = "Probability it is asthma =" + asthmaPercent + "%" + "<br> Probability it is COPD =" + COPDPercent + "%";} //The code above changes what goes on the last page with the id="results" all of the stuff in quotations will show up how it is written and the white parts will call the variables above.
 
 </script>	
 
@@ -87,7 +87,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 	
 	img {
-            max-height: 70%;
+            max-height: 70%; 
             max-width: 70%;
         }
 
